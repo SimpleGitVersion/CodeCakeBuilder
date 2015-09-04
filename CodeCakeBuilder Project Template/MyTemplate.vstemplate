@@ -1,0 +1,33 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>CodeCakeBuilder Project Template</Name>
+    <Description>Creates a new CodeCakeBuilder project in a solution.</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>CodeCakeBuilder</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Disabled</LocationField>
+    <EnableLocationBrowseButton>false</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.png</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="CodeCakeBuilder.csproj" File="CodeCakeBuilder.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="App.config">App.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Bootstrap.ps1">Bootstrap.ps1</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Build.cs" OpenInEditor="true">Build.cs</ProjectItem>
+      <Folder Name="NuSpec" TargetFolderName="NuSpec">
+        <ProjectItem ReplaceParameters="false" TargetFileName="nuspec.xsd">nuspec.xsd</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Sample.Library.Core.nuspec">Sample.Library.Core.nuspec</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Sample.Library.nuspec">Sample.Library.nuspec</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Program.cs">Program.cs</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
