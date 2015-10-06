@@ -74,8 +74,8 @@ namespace CodeCake
                     {
                         using( var tempSln = Cake.CreateTemporarySolutionFile( sln ) )
                         {
-                            // "CodeCakeVSIX" MUST BE REMOVED for Build.cs in "$safeprojectname$ Project Template" !
-                            tempSln.ExcludeProjectsFromBuild( "$safeprojectname$", "CodeCakeVSIX" );
+                            // Excludes $safeprojectname$itself from compilation!
+                            tempSln.ExcludeProjectsFromBuild( "$safeprojectname$" );
                             Cake.MSBuild( tempSln.FullPath, new MSBuildSettings()
                                     .SetConfiguration( configuration )
                                     .SetVerbosity( Verbosity.Minimal )
