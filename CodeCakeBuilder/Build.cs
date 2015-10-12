@@ -19,9 +19,13 @@ namespace CodeCake
     /// Sample build "script".
     /// Build scripts can be decorated with AddPath attributes that inject existing paths into the PATH environment variable. 
     /// </summary>
-    [AddPath( "%LOCALAPPDATA%/My-Marvelous-Tools" )]
     [AddPath( "CodeCakeBuilder/Tools" )]
     [AddPath( "packages/**/tools*" )]
+    // The following one is a sample, but the two previous ones are useful: 
+    // the first one finds the nuget.exe that bootstrap.ps1 downloads and uses, 
+    // the second one enables to find tools that can be installed as NuGet packages in a solution.
+    // You may keep this sample AddPath since unexisting paths are actually ignored.
+    [AddPath( "%LOCALAPPDATA%/My-Marvelous-Tools" )]
     public class Build : CodeCakeHost
     {
         public Build()
